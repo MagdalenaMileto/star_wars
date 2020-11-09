@@ -1,0 +1,146 @@
+$primary-color: #242324
+$secondary-color: #2C2A2C
+$primary-details-color: #4b7275
+$secondary-details-color: #5D7675
+$titles: #EFBD56
+$primary-font-color: #dfdfd0
+
+html, body
+  background-color: $primary-color
+
+#root
+  font-family: Arial, Helvetica, sans-serif
+  color: $primary-font-color
+  display: flex
+  flex-direction: column
+  height: 100%
+
+.links
+  color: $primary-font-color
+
+.header
+  display: flex
+  flex-direction: column
+  align-items: center
+  color: $titles
+  margin-top: 0.5rem
+  font-size: 60px
+
+.subtitle
+  color: $primary-details-color
+
+.main-content
+  display: flex
+  flex-direction: column
+  width: 80%
+  margin-left: 1rem
+  flex: 1
+
+//Resident Card
+.resident-grid
+  display: grid
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr))
+  grid-gap: 1rem
+
+.resident-card
+  border: 1px solid $secondary-details-color
+  border-radius: 4px
+  padding: 0.5rem
+  cursor: pointer
+  display: flex
+  flex-direction: column
+  align-items: center
+  height: 10rem
+  span
+    padding-top: 0.5rem
+    text-overflow: ellipsis
+    overflow: hidden
+    font-size: 25px
+    text-align: center
+    margin-top: 20px
+
+.avatar
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  background-color: $primary-details-color
+  color: white
+  font-size: 40px
+
+.profile
+  width: 70%
+  margin-top: 1rem
+  padding: 1rem
+  border: solid $primary-details-color 1px
+  display: flex
+  align-items: center
+
+.resident-information
+  display: flex
+  flex-wrap: wrap
+  > div
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr))
+    margin-right: 1rem
+    margin-top: 1rem
+
+//Search
+.search
+  height: 1.5rem
+  margin-bottom: 1rem
+  border-bottom: 1px solid $primary-details-color
+  input
+    padding: 0.5rem
+    width: 100%
+    border: 0 solid
+    background: inherit
+    color: $primary-font-color
+    font-size: 15px
+    &:focus
+      outline: none
+
+.breadcrumb
+  margin-bottom: 1rem
+  display: contents
+  &:visited
+    color: unset
+
+//Table
+.table
+  border-collapse: collapse
+  border: gray
+  margin-top: 1em
+
+  table
+    width: 100%
+
+  tbody tr:nth-child(odd)
+    background-color: $secondary-color
+
+  th
+    text-align: left
+    font-weight: bold
+    width: 25%
+
+  td
+    padding: 8px
+
+//Paginate
+.pagination
+  display: flex
+  font-size: 15px
+  > *
+    margin-right: 1rem
+
+  input[type=number],
+  input[type=number]::-webkit-inner-spin-button
+    opacity: 1
+    border: none
+    background-color: unset
+    color: $primary-font-color
+    text-align: center
+    &:focus
+      outline: none

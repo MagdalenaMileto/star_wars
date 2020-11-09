@@ -1,5 +1,13 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# misc
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
+
+.idea
+
 # dependencies
 /node_modules
 /.pnp

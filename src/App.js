@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.sass';
+import React from 'react';
+import {
+  BrowserRouter, Route, Switch, useHistory,
+} from 'react-router-dom';
+import { PlanetsPage } from './components/pages/PlanetsPage';
+import { PlanetPage } from './components/pages/PlanetPage';
+import { getPlanet, getPlanets, getResidentDetails } from './api/actions';
+import { ResidentPage } from './components/pages/ResidentPage';
+import { routes } from './routes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function RedirectToPlanets() {
+  const history = useHistory();
+  history.replace(routes.planets.route);
+  // noinspection JSConstructorReturnsPrimitive
+  return null;
 }
 
-export default App;
+export function App() {
+  return (
+    <>
+      <div className="header">
+        Star Wars API
+      </div>
+      <div className="main-content">
+        <BrowserRouter>
+          <Switch>
+            <Route exact path={routes.planets.route}>
+              <PlanetsPage getPlanets={getPlanets} />
+            </Route>
+            <Route exact path={routes.residents.route}>
+              <PlanetPage getPlanet={getPlanet} />
+            </Route>
+            <Route path={routes.resident.route}>
+              <ResidentPage getResidentDetails={getResidentDetails} />
+            </Route>
+            <Route path="*" component={RedirectToPlanets} />
+          </Switch>
+        </BrowserRouter>
+      </div>
+    </>
+  );
+}

@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
-}
+html, body {
+  background-color: #242324; }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+#root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #dfdfd0;
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.links {
+  color: #dfdfd0; }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #EFBD56;
+  margin-top: 0.5rem;
+  font-size: 60px; }
+
+.subtitle {
+  color: #4b7275; }
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 1rem;
+  flex: 1; }
+
+.resident-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-gap: 1rem; }
+
+.resident-card {
+  border: 1px solid #5D7675;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10rem; }
+  .resident-card span {
+    padding-top: 0.5rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px; }
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #4b7275;
   color: white;
-}
+  font-size: 40px; }
 
-.App-link {
-  color: #61dafb;
-}
+.profile {
+  width: 70%;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: solid #4b7275 1px;
+  display: flex;
+  align-items: center; }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+.resident-information {
+  display: flex;
+  flex-wrap: wrap; }
+  .resident-information > div {
+    margin-right: 2rem;
+    margin-top: 1rem; }
+
+.search {
+  height: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #4b7275; }
+  .search input {
+    padding: 0.5rem;
+    width: 100%;
+    border: 0 solid;
+    background: inherit;
+    color: #dfdfd0;
+    font-size: 15px; }
+    .search input:focus {
+      outline: none; }
+
+.breadcrumb {
+  margin-bottom: 1rem;
+  display: contents; }
+  .breadcrumb:visited {
+    color: unset; }
+
+.table {
+  border-collapse: collapse;
+  border: gray;
+  margin-top: 1em; }
+  .table table {
+    width: 100%; }
+  .table tbody tr:nth-child(odd) {
+    background-color: #2C2A2C; }
+  .table th {
+    text-align: left;
+    font-weight: bold;
+    width: 25%; }
+  .table td {
+    padding: 8px; }
+
+.pagination {
+  display: flex;
+  font-size: 15px; }
+  .pagination > * {
+    margin-right: 1rem; }
+  .pagination input[type=number],
+  .pagination input[type=number]::-webkit-inner-spin-button {
+    opacity: 1;
+    border: none;
+    background-color: unset;
+    color: #dfdfd0;
+    text-align: center; }
+    .pagination input[type=number]:focus,
+    .pagination input[type=number]::-webkit-inner-spin-button:focus {
+      outline: none; }
+
+/*# sourceMappingURL=App.css.map */
