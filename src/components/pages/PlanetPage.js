@@ -18,9 +18,11 @@ export function PlanetPage({ getPlanet }) {
       <Breadcrumbs crumbs={atPlanet(planet.name, planet.id)} />
       <h3>Residents of {planet?.name}</h3>
       <div className="resident-grid">
-        {planet.residents.map((resident) => (
-          <ResidentDetail key={resident.name} resident={resident} />
-        ))}
+        {planet.residents.length !== 0
+          ? planet.residents.map((resident) => (
+            <ResidentDetail key={resident.name} resident={resident} />
+          ))
+          : <div>Theres no residents for this planet</div>}
       </div>
     </div>
     )
